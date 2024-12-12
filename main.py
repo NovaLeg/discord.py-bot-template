@@ -13,10 +13,10 @@ class Nova(commands.Bot):
         await self.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="/help"))
 
     async def setup_hook(self):
-        for filename in os.listdir('./Nova'):
+        for filename in os.listdir('./cogs'):
             if filename.endswith('.py'):
                 try:
-                    await self.load_extension(f'Nova.{filename[:-3]}')
+                    await self.load_extension(f'cogs.{filename[:-3]}')
                     print(f'[Loaded] `{filename}`')
                 except Exception as e:
                     print(f'Failed to load {filename}: {e}')

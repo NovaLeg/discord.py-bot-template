@@ -1,7 +1,7 @@
 import discord
 import os
 from discord.ext import commands
-from Settings.config import color, token, owner
+from config.config import color, token, owner
 
 class Nova(commands.Bot):
     def __init__(self):
